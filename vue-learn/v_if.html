@@ -1,0 +1,47 @@
+ <!--
+            Vue常用的指令
+            vue的指令是以v-开头，它作用于html元素，指令提供了一些特殊的的特性，将指令绑定在元素上时，指令
+            会为绑定的目标元素添加一些特殊的行为，我们可以将指令看作特殊的 html特性（attribute）
+            
+            vue提供了一些常用的内置指令：
+            v-if
+            v-show
+            v-else
+            v-for
+            v-bind
+            v-on
+            
+            vue有良好的扩展性，我们也可以开发一些自定义的指令。
+   -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <!--View-->
+        <div id="app">
+            <h1>Hello, Vue.js!</h1>
+            <h1 v-if="yes">Yes!</h1>
+            <h1 v-if="no">No!</h1>
+            <h1 v-if="age >= 25">Age: {{ age }}</h1>
+            <h1 v-if="name.indexOf('jack') >= 0">Name: {{ name }}</h1>
+        </div>
+    </body>
+    <script src="js/vue.js"></script>
+    <script>
+        
+        /*ViewModel*/
+        var vm = new Vue({
+            el: '#app',// view 
+            data: {// model
+                yes: true,
+                no: false,
+                age: 28,
+                name: 'keepfool'
+            }
+        })
+    </script>
+</html>
+

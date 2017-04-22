@@ -1,0 +1,59 @@
+<html>
+<head>
+<style>
+</style>
+    <script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+    <!--
+        数据驱动和组件化，通过特殊的html语法，将DOM和数据绑定在一起。
+    
+    -->
+    <!--view-->
+    入门：<br>
+    <div id="app">
+        <div>{{message}}</div><!--Vue有多中数据绑定的语法，最基础的方式就是文本插值。
+            在运行时{{message}}会被数据对象的message数据替换，所以页面上输出"Hello world!"
+
+        -->
+        
+    </div>
+    <script>
+        /*model*/
+        var model = {
+            message:'hello world'
+        };
+        
+        /*创建一个Vue实例或者ViewModel*/
+        // 它连接view和model
+        new Vue({
+            el:'#app',// '#app'表示该Vue实例挂载到<div id="app"></div>这个元素
+            data:model// data属性指向model
+        });
+        
+        /*使用Vue的过程就是定义MVVM的过程：
+            1、定义view
+            2、定义model
+            3、创建一个Vue实例或“ViewModel”,它用于连接view和model
+        
+        */
+    </script>
+    <hr>
+    双向数据绑定：<br>
+    <div id="app2">
+        <p>{{message}}</p>
+        <input type="text" v-model="message"/><!--v-model指令实现双向数据绑定-->
+    </div>
+    <script>
+        var model2 = {
+            message:'张三'
+        };
+        
+        new Vue({
+            el:'#app2',
+            data:model2
+        });
+        
+    </script>
+</body>
+</html>

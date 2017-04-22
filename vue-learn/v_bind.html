@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="css/demo.css" />
+    </head>
+    <body>
+        <div id="app">
+            <ul class="pagination">
+                <li v-for="n in pageCount">
+                    <a href="javascripit:void(0)" v-bind:class="activeNumber === n + 1 ? 'active' : ''">{{ n + 1 }}</a>
+                </li>
+            </ul>
+        </div>
+        
+        <!--
+            output:
+
+                <div data-brackets-id="204" id="app">
+            <ul data-brackets-id="205" class="pagination">
+                <li data-brackets-id="206">
+                    <a data-brackets-id="207" href="javascripit:void(0)" class="active">1</a>
+                </li><li data-brackets-id="206">
+                    <a data-brackets-id="207" href="javascripit:void(0)">2</a>
+                </li><li data-brackets-id="206">
+                    <a data-brackets-id="207" href="javascripit:void(0)">3</a>
+                </li><li data-brackets-id="206">
+                    <a data-brackets-id="207" href="javascripit:void(0)">4</a>
+                </li><li data-brackets-id="206">
+                    <a data-brackets-id="207" href="javascripit:void(0)">5</a>
+                </li><li data-brackets-id="206">
+                    <a data-brackets-id="207" href="javascripit:void(0)">6</a>
+                </li><li data-brackets-id="206">
+                    <a data-brackets-id="207" href="javascripit:void(0)">7</a>
+                </li><li data-brackets-id="206">
+                    <a data-brackets-id="207" href="javascripit:void(0)">8</a>
+                </li><li data-brackets-id="206">
+                    <a data-brackets-id="207" href="javascripit:void(0)">9</a>
+                </li><li data-brackets-id="206">
+                    <a data-brackets-id="207" href="javascripit:void(0)">10</a>
+                </li>
+            </ul>
+        </div>
+    
+        -->
+    </body>
+    <script src="js/vue.js"></script>
+    <script>
+        /*
+        v-bind指令可以在其名称后面带一个参数，中间放一个冒号隔开，这个参数通常是HTML元素的特性（attribute），例如：v-bind:class
+
+        v-bind:argument="expression"
+        注意v-for="n in pageCount"这行代码，pageCount是一个整数，遍历时n从0开始，然后遍历到pageCount –1结束。*/
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                activeNumber: 1,
+                pageCount: 10
+            }
+        })
+    </script>
+</html>

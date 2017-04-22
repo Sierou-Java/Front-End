@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Hello, Vue.js!</h1>
+            <h1 v-show="yes">Yes!</h1>
+            <h1 v-show="no">No!</h1>
+            <h1 v-show="age >= 25">Age: {{ age }}</h1>
+            <h1 v-show="name.indexOf('jack') >= 0">Name: {{ name }}</h1>
+        </div>
+        <!--
+            output:
+        <div data-brackets-id="138" id="app">
+            <h1 data-brackets-id="139">Hello, Vue.js!</h1>
+            <h1 data-brackets-id="140">Yes!</h1>
+            <h1 data-brackets-id="141" style="display: none;">No!</h1>
+            <h1 data-brackets-id="142">Age: 28</h1>
+            <h1 data-brackets-id="143" style="display: none;">Name: keepfool</h1>
+        </div>
+        
+            data-brackets-id="143" 有个属性是因为我使用了bracket编辑器的live view模式
+        -->
+    </body>
+    <script src="js/vue.js"></script>
+    <script>
+        /*v-show也是条件渲染指令，和v-if指令不同的是，使用v-show指令的元素始终会被渲染到HTML，它只是简单地为元素设置CSS的style属性。*/
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                yes: true,
+                no: false,
+                age: 28,
+                name: 'keepfool'
+            }
+        })
+    </script>
+</html>

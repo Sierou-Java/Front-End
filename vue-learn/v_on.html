@@ -1,0 +1,61 @@
+<html>
+<head>
+<style>
+</style>
+    <script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+    <!--
+        数据驱动和组件化，通过特殊的html语法，将DOM和数据绑定在一起。
+    
+    -->
+    <div id="app">
+        <div>{{counter}}</div>
+        <button v-on:click="increament">Increament</button>
+    </div>
+    <hr>
+     <script>
+        new Vue({
+            el:'#app',
+            data:{
+                counter:0// data属性中的counter与DOM节点相互关联（数据驱动）
+            },
+            methods:{
+                increament(){
+                    this.counter++;
+                }
+            }
+        });
+    </script>
+    <div id="app2">
+            <p><input type="text" v-model="message"></p>
+            <p>
+                <!--click事件直接绑定一个方法-->
+                <button v-on:click="greet">Greet</button>
+            </p>
+            <p>
+                <!--click事件使用内联语句-->
+                <button v-on:click="say('Hi')">Hi</button>
+            </p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app2',
+            data: {
+                message: 'Hello, Vue.js!'
+            },
+            // 在 `methods` 对象中定义方法
+            methods: {
+                greet: function() {
+                    // // 方法内 `this` 指向 vm
+                    alert(this.message)
+                },
+                say: function(msg) {
+                    alert(msg)
+                }
+            }
+        })
+    </script>
+   
+</body>
+</html>

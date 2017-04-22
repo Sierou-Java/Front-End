@@ -1,0 +1,18 @@
+<html>
+<head>
+</head>
+<body>
+   <!-- v-bind和v-on的缩写
+Vue.js为最常用的两个指令v-bind和v-on提供了缩写方式。v-bind指令可以缩写为一个冒号，v-on指令可以缩写为@符号。-->
+
+<!--完整语法-->
+<a href="javascripit:void(0)" v-bind:class="activeNumber === n + 1 ? 'active' : ''">{{ n + 1 }}</a>
+<!--缩写语法-->
+<a href="javascripit:void(0)" :class="activeNumber=== n + 1 ? 'active' : ''">{{ n + 1 }}</a>
+
+<!--完整语法-->
+<button v-on:click="greet">Greet</button>
+<!--缩写语法-->
+<button @click="greet">Greet</button>
+</body>
+</html>
